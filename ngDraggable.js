@@ -134,7 +134,7 @@ angular.module("ngDraggable", [])
                     if (! onDragSuccessCallback)return;
 
                     scope.$apply(function() {
-                        
+
                         onDragSuccessCallback(scope, { $data: _data, $event: evt });
                         if (evt.accepted)
                             scope.captured = "ok";
@@ -145,7 +145,7 @@ angular.module("ngDraggable", [])
                 };
                 var moveElement = function(x, y, fazerumavez) {
                     if (fazerumavez === "ok")
-                        element.css({ width: element.width() + 'px' });
+                        element.css({ width: element.clientWidth + 'px' });
                     element.css({ left: x, top: y, position: 'fixed', 'z-index': 99999 });
 
                 };
